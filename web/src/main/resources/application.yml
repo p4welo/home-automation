@@ -11,3 +11,7 @@ app:
     defaultUser:
         login: test
         password: $2a$10$m.sQIu0z9OL8DVuEsy8ta.wGC1tb8BMtlJ6fmuOx9u0nU0qVmUE/q
+
+mqtt:
+    broker:
+        url: tcp://91.218.78.136:1883
