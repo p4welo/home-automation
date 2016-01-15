@@ -11,6 +11,7 @@ app:
     defaultUser:
         login: test
         password: $2a$10$m.sQIu0z9OL8DVuEsy8ta.wGC1tb8BMtlJ6fmuOx9u0nU0qVmUE/q
+        homeId: home1
 
 mqtt:
     broker:

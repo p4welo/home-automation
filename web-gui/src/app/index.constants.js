@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('webGui')
+    .module('homeAutomation')
     .constant('malarkey', malarkey)
     .constant('moment', moment);
 

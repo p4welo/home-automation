@@ -25,10 +25,13 @@ public class MqttConfig {
     @Value("${mqtt.broker.url}")
     private String brokerUrl;
 
+    @Value("${app.defaultUser.homeId}")
+    private String homeId;
+
     @Bean
     public MqttPahoMessageDrivenChannelAdapter mqttInbound() {
 
-        MqttPahoMessageDrivenChannelAdapter mqtt = new MqttPahoMessageDrivenChannelAdapter("localSub" + UUID.randomUUID().toString().trim().substring(0, 5), clientFactory(), "/home1/#");
+        MqttPahoMessageDrivenChannelAdapter mqtt = new MqttPahoMessageDrivenChannelAdapter("localSub" + UUID.randomUUID().toString().trim().substring(0, 5), clientFactory(), "/" + homeId + "/#");
         mqtt.setQos(2);
         mqtt.setOutputChannel(outbount());
         mqtt.setAutoStartup(true);

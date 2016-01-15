@@ -1,32 +1,32 @@
-(function() {
-  'use strict';
+(function () {
+	'use strict';
 
-  angular
-    .module('webGui')
-    .directive('acmeNavbar', acmeNavbar);
+	angular
+		.module('homeAutomation')
+		.directive('navbar', navbar);
 
-  /** @ngInject */
-  function acmeNavbar() {
-    var directive = {
-      restrict: 'E',
-      templateUrl: 'app/components/navbar/navbar.html',
-      scope: {
-          creationDate: '='
-      },
-      controller: NavbarController,
-      controllerAs: 'vm',
-      bindToController: true
-    };
+	/** @ngInject */
+	function navbar() {
+		var directive = {
+			restrict: 'E',
+			templateUrl: 'app/components/navbar/navbar.html',
+			scope: {
+				creationDate: '='
+			},
+			controller: NavbarController,
+			controllerAs: 'vm',
+			bindToController: true
+		};
 
-    return directive;
+		return directive;
 
-    /** @ngInject */
-    function NavbarController(moment) {
-      var vm = this;
+		/** @ngInject */
+		function NavbarController(moment) {
+			var vm = this;
 
-      // "vm.creation" is avaible by directive option "bindToController: true"
-      vm.relativeDate = moment(vm.creationDate).fromNow();
-    }
-  }
+			// "vm.creation" is avaible by directive option "bindToController: true"
+			vm.relativeDate = moment(vm.creationDate).fromNow();
+		}
+	}
 
 })();

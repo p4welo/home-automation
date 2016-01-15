@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('webGui')
+    .module('homeAutomation')
     .config(config);
 
   /** @ngInject */

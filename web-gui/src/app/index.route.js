@@ -1,21 +1,18 @@
-(function() {
-  'use strict';
+(function () {
+	'use strict';
 
-  angular
-    .module('webGui')
-    .config(routerConfig);
+	angular
+		.module('homeAutomation')
+		.config(routerConfig);
 
-  /** @ngInject */
-  function routerConfig($stateProvider, $urlRouterProvider) {
-    $stateProvider
-      .state('home', {
-        url: '/',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainController',
-        controllerAs: 'main'
-      });
+	/** @ngInject */
+	function routerConfig($stateProvider, $urlRouterProvider) {
+		$stateProvider
+			.state('home', {
+				templateUrl: 'app/main/main.html',
+				abstract: true
+			});
 
-    $urlRouterProvider.otherwise('/');
-  }
-
+		$urlRouterProvider.otherwise('/devices');
+	}
 })();
