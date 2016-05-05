@@ -17,10 +17,7 @@ public interface MqttUtils {
     }
 
     static boolean matchTopic(String topic, String pattern) {
-        if (topic == null || topic.length() == 0 || pattern == null) {
-            return false;
-        }
-        return topic.matches(pattern.replace("/", "\\/").replace("#", ".*"));
+        return !(topic == null || topic.length() == 0 || pattern == null) && topic.matches(pattern.replace("/", "\\/").replace("#", ".*"));
     }
 
 }

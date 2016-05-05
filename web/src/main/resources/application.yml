@@ -15,4 +15,4 @@ app:
 
 mqtt:
     broker:
-        url: tcp://91.218.78.136:1883
+        url: tcp://test.mosquitto.org:1883
