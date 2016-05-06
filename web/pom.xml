@@ -64,7 +64,7 @@
             <version>1.16.6</version>
         </dependency>
     </dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -73,7 +73,7 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+
 	<repositories>
 		<repository>
 			<id>spring-snapshots</id>
