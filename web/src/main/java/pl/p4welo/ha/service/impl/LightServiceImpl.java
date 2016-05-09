@@ -8,7 +8,7 @@ import pl.p4welo.ha.service.LightService;
  * Created by Paweł Radomski on 2016-01-07.
  */
 @Service(LightServiceImpl.BEAN_NAME)
-public class LightServiceImpl extends DeviceServiceImpl implements LightService  {
+public class LightServiceImpl extends DeviceServiceImpl implements LightService {
 
     public static final String BEAN_NAME = "lightService";
 
