@@ -8,6 +8,6 @@ import pl.p4welo.ha.domain.Device;
 public interface DeviceService {
 
     void updateStatus(Device device, String status);
-
     Device getById(String deviceId);
+    void introduceNew(String homeId, String deviceId, String status);
 }

@@ -1,20 +1,20 @@
-package pl.p4welo.ha.mq.incoming.listener.device;
+package pl.p4welo.ha.event.listener.device;
 
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 import pl.p4welo.ha.domain.Device;
-import pl.p4welo.ha.mq.incoming.event.DeviceStatusEvent;
+import pl.p4welo.ha.event.type.DeviceStatusEvent;
 import pl.p4welo.ha.service.DeviceService;
 
 import javax.annotation.Resource;
 
 /**
- * Created by PARADOMS on 15-10-01.
+ * Created by Paweł Radomski on 2016-05-09.
  */
-@Component(DeviceStatusListener.BEAN_NAME)
-public class DeviceStatusListener {
+@Component(NewDeviceIntroduction.BEAN_NAME)
+public class NewDeviceIntroduction {
 
-    public static final String BEAN_NAME = "deviceStatusListener";
+    public static final String BEAN_NAME = "newDeviceIntroduction";
 
     @Resource
     private DeviceService deviceService;
@@ -22,6 +22,8 @@ public class DeviceStatusListener {
     @EventListener
     public void onApplicationEvent(DeviceStatusEvent event) {
         Device device = deviceService.getById(event.getDeviceId());
-        deviceService.updateStatus(device, event.getStatus());
+        if (device == null) {
+            deviceService.introduceNew(event.getHomeId(), event.getDeviceId(), event.getStatus());
+        }
     }
 }

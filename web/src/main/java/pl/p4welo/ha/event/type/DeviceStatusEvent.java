@@ -1,4 +1,4 @@
-package pl.p4welo.ha.mq.incoming.event;
+package pl.p4welo.ha.event.type;
 
 import lombok.Builder;
 import lombok.Data;

@@ -7,7 +7,7 @@ import org.springframework.messaging.MessageHandler;
 import org.springframework.messaging.MessagingException;
 import org.springframework.stereotype.Component;
 import pl.p4welo.ha.mq.incoming.api.MqttTopics;
-import pl.p4welo.ha.mq.incoming.event.DeviceStatusEvent;
+import pl.p4welo.ha.event.type.DeviceStatusEvent;
 
 import static pl.p4welo.ha.mq.utils.MqttUtils.matchTopic;
 import static pl.p4welo.ha.mq.utils.MqttUtils.resolveIncomingTopic;

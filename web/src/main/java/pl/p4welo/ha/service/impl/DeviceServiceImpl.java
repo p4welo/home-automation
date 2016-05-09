@@ -29,4 +29,13 @@ public class DeviceServiceImpl implements DeviceService {
     public Device getById(String deviceId) {
         return deviceRepository.findOne(deviceId);
     }
+
+    @Override
+    public void introduceNew(String homeId, String deviceId, String status) {
+        deviceRepository.save(Device.builder()
+                .id(deviceId)
+                .homeId(homeId)
+                .status(status)
+                .build());
+    }
 }
